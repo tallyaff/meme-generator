@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+
+    <title>Meme Generator</title>
+
+</head>
+
+<body onload="onInit()">
+
+    <header>
+        <!-- <button class="hamburger" onclick="toggleMenu()">☰</button> -->
+        <div class="hamburger" onclick="changeIcon(this);toggleMenu();">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <ul class="mobile-menu">
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#">Blog</a>
+            </li>
+            <li>
+                <a href="#">Get in touch</a>
+            </li>
+        </ul>
+
+
+        <div class="full-menu container align-center center">
+            <ul class="menu container responsive-header flex align-center space-between ">
+                <li class="btn">
+                    <a href="">Portfolio</a>
+                </li>
+                <li class="btn">.</li>
+                <li class="btn">
+                    <a href="#">About</a>
+                </li>
+            </ul>
+            <img src="imgs/logo (1).png" class="logo" />
+            <ul class="menu container responsive-header flex align-center space-between">
+                <li class="btn">
+                    <a href="#">Blog</a>
+                </li>
+                <li class="btn">.</li>
+                <li class="btn">
+                    <a href="#">Get in touch</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class='gallery container flex clean-list wrap center'>
+
+    </div>
+
+    <button class="btn btn-return hide" onclick="returnToGallery()">Return to gallery</button>
+    <div class="canvas-container hide flex column ">
+    
+        <canvas class="canvas"></canvas>
+
+        <div class="editor-header-container flex column align-center">
+            <div class="editor-container">
+                <input class="text" type="text" oninput="changeText(this.value)" placeholder="Start Write Your Meme!">
+                <div class="fonts-ddl" onclick="fontsMenu()">change font
+                    <div class="drop-btn font-option" onclick="changeFont('Roboto')">
+                        <p></p>Roboto</p>
+                    </div>
+                    <div class="drop-btn font-option" onclick="changeFont('Arial')">
+                        <p>Arial</p>
+                    </div>
+                    <div class="drop-btn font-option" onclick="changeFont('Impact')">
+                        <p>Impact</p>
+                    </div>
+                </div>
+                <div class="editor-btns flex column">
+                    <div class="first-btns-section flex space-around ">
+                        <div class="icon btn-increase far fa-plus-square fa-3x" onclick="resizeTxt(1)"></div>
+                        <div class="icon btn-decrease far fa-minus-square fa-3x" onclick="resizeTxt(-1)"></div>
+                        <input type="color" class="color" name="color" onchange="changeTxtColor(this.value)" />
+
+                    </div>
+                    <div class="second-btns-section flex space-around ">
+                        <div>
+                            <button class="btn btn-increase" onclick="addLine()">New Line</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-next-line" onclick="switchLine()">Switch Line</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-next-line" onclick="DeleteLine()">Delete Line</button>
+                        </div>
+                    </div>
+                    <div class="third-btns-section flex space-around">
+                        <div>
+                            <button class="icon fas fa-angle-down fa-3x" onclick="moveLine(20)"></button>
+                        </div>
+                        <div>
+                            <button class="icon fas fa-angle-up fa-3x" onclick="moveLine(-20)"></button>
+                        </div>
+                        <div>
+                            <button class="icon fas fa-angle-right fa-3x" onclick="moveLine(15)"></button>
+                        </div>
+                        <div>
+                            <button class="icon fas fa-angle-left fa-3x" onclick="moveLine(-15)"></button>
+                        </div>
+                        <div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="download flex space-between">
+                <a class="icon btn-download fas fa-download fa-3x" onclick="downloadMeme(this)">
+                </a>
+        
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- <section id="">
+        <div class="about-container">
+            <img class="me" src="imgs/me2.jpg" alt="">
+            <p class="me-desc">Hello , i am Tally.After four years of being a QA person, ive desided to become a programmer. At my free time
+                i like to cook, travel and dive. I hope you will enjoy my portfolio, and would like to hear from you in case
+                you have any suggestions by the chat section on the website, or by my Linkdin account.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="portfolio">
+        <div class="portfolio-container">
+            <h1>check out my portfolio</h1>
+
+        </div>
+
+
+
+    </section> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/meme-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
